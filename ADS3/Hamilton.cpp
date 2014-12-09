@@ -26,7 +26,7 @@ bool hamCycleUtil(Graph *g, vector<int> &ham, int pos) {
 		}
 	}
 
-	for (int v = 1; v < g->getVerticesCount(); v++) {
+	for (int v = 0; v < g->getVerticesCount(); v++) {
 		if (isSafe(v, g, ham, pos)) {
 			ham[pos] = v;
 
@@ -41,7 +41,7 @@ bool hamCycleUtil(Graph *g, vector<int> &ham, int pos) {
 	return false; 
 }
 
-vector<int> Graph::getHamPath()
+vector<int> Graph::getHamPath(int start)
 {
 	Graph* gc = this->clone();
 	vector<int> hamilton;
@@ -49,7 +49,7 @@ vector<int> Graph::getHamPath()
 	for (int i = 0; i < getVerticesCount(); i++) {
 		hamilton.push_back(-1);
 	}
-	hamilton[0] = 0;
+	hamilton[0] = start;
 
 	if (hamCycleUtil(gc, hamilton, 1) == false) {
 		cout<<"Nope."<<endl;

@@ -34,7 +34,7 @@ int main()
 
 	g->show();
 
-	g->getHamPath();
+	g->getHamPath(0);
 	
 	delete g;
 

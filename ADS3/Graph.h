@@ -143,6 +143,6 @@ public:
 	vector<int> findCycle();
 	vector<int> findShortestPath(int from, int to);
 
-	vector<int> getHamPath();
+	vector<int> getHamPath(int start);
 
 };
